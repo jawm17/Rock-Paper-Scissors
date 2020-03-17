@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        var playerScore = 0;
+        var computerScore = 0;
+
+        for (var i = 0; i < 10; i++) {
+
+            var weaponValue = prompt("r, p, or s?");
+            var weapon = weaponValue.toLowerCase();
+            var enemyWeapon = Math.ceil(Math.random() * 3);
+
+            //rock
+            if (enemyWeapon === 1) {
+                if (weapon === "r") {
+                    alert("Computer chose rock - It's a tie!")
+                }
+                else if (weapon === "p") {
+                    alert("Computer chose rock - You Win!")
+                    playerScore++;
+                }
+                else if (weapon === "s") {
+                    alert("Computer chose rock - You Lose!")
+                    computerScore++;
+                }
+            }
+            //paper
+            if (enemyWeapon === 2) {
+                if (weapon === "r") {
+                    alert("Computer chose paper - You Lose!")
+                    computerScore++;
+                }
+                else if (weapon === "p") {
+                    alert("Computer chose paper - It's a tie!")
+                }
+                else if (weapon === "s") {
+                    alert("Computer chose paper - You Win!")
+                    playerScore++;
+                }
+            }
+            //scissors
+            if (enemyWeapon === 3) {
+                if (weapon === "r") {
+                    alert("Computer chose scissors - You Win!")
+                    playerScore++;
+            }
+            else if (weapon === "p") {
+                alert("Computer chose scissors - You Lose!")
+                computerScore++;
+            }
+            else if (weapon === "s") {
+                alert("Computer chose scissors - It's a tie!")
+            }
+        }
+        alert(("Computer Score: " + computerScore + " ") + ("Player Score: " + playerScore))
+
+        }
+
+    </script>
+</body>
+</html>
