@@ -11,57 +11,70 @@
         var playerScore = 0;
         var computerScore = 0;
 
+        //loops ten times
         for (var i = 0; i < 10; i++) {
 
+            //saves player choice in weaponVaue
             var weaponValue = prompt("r, p, or s?");
+            //coverts weaponValue to lowercase just in case 
             var weapon = weaponValue.toLowerCase();
+            //chooses enemyWeapon value 1,2, or 3
             var enemyWeapon = Math.ceil(Math.random() * 3);
 
-            //rock
+            //---------------- computer chose rock ------------------------------------------
             if (enemyWeapon === 1) {
+                //user chose rock
                 if (weapon === "r") {
-                    alert("Computer chose rock - It's a tie!")
+                    alert("Computer chose rock - It's a tie!");
                 }
+                //user chose paper
                 else if (weapon === "p") {
-                    alert("Computer chose rock - You Win!")
+                    alert("Computer chose rock - You Win!");
                     playerScore++;
                 }
+                //user chose scissors
                 else if (weapon === "s") {
-                    alert("Computer chose rock - You Lose!")
+                    alert("Computer chose rock - You Lose!");
                     computerScore++;
                 }
             }
-            //paper
+            //---------------- computer chose paper ------------------------------------------
             if (enemyWeapon === 2) {
+                //user chose rock
                 if (weapon === "r") {
-                    alert("Computer chose paper - You Lose!")
+                    alert("Computer chose paper - You Lose!");
                     computerScore++;
                 }
+                //user chose paper
                 else if (weapon === "p") {
-                    alert("Computer chose paper - It's a tie!")
+                    alert("Computer chose paper - It's a tie!");
                 }
+                //user chose scissors
                 else if (weapon === "s") {
-                    alert("Computer chose paper - You Win!")
+                    alert("Computer chose paper - You Win!");
                     playerScore++;
                 }
             }
-            //scissors
+            //---------------- computer chose scissors ------------------------------------------
             if (enemyWeapon === 3) {
+                //user chose rock
                 if (weapon === "r") {
-                    alert("Computer chose scissors - You Win!")
+                    alert("Computer chose scissors - You Win!");
                     playerScore++;
+                }
+                //user chose paper
+                else if (weapon === "p") {
+                    alert("Computer chose scissors - You Lose!");
+                    computerScore++;
+                }
+                //user chose scissors
+                else if (weapon === "s") {
+                    alert("Computer chose scissors - It's a tie!");
+                }
             }
-            else if (weapon === "p") {
-                alert("Computer chose scissors - You Lose!")
-                computerScore++;
-            }
-            else if (weapon === "s") {
-                alert("Computer chose scissors - It's a tie!")
-            }
-        }
-        alert(("Computer Score: " + computerScore + " ") + ("Player Score: " + playerScore))
-
-        }
+        //alert user with score
+        alert(("Computer Score: " + computerScore + "\r\n") + ("Player Score: " + playerScore));
+    }
 
     </script>
 </body>
